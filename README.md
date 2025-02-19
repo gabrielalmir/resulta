@@ -1,81 +1,82 @@
-# resulta
+# Resulta
 
-## Overview
-
-`resulta` is a TypeScript utility for handling results in an expressive way, inspired by Rust's `Result` type.
+Resulta is a TypeScript library that provides a `Result` type for handling success and error values in a functional way. It is inspired by the Result type in Rust.
 
 ## Installation
 
-To install dependencies:
+You can install Resulta using npm:
 
-```bash
-bun install
+```sh
+npm install resulta
+```
+
+Or using yarn:
+
+```sh
+yarn add resulta
 ```
 
 ## Usage
 
-To run the project:
+### Basic Usage
 
-```bash
-bun run src/index.ts
+```ts
+import { ok, err, Result } from 'resulta';
+
+function hello(message = ''): Result<string, Error> {
+    if (!message) {
+        return err(new Error('hello without world'));
+    }
+
+    return ok(`hello ${message}`);
+}
+
+const result = hello();
+
+if (result.ok) {
+    console.log(result.value);
+} else {
+    console.error(result.error);
+}
 ```
 
-## Functions
+### Async Functions
+
+```ts
+import { match } from 'resulta';
+
+async function fetchData(): Promise<string> {
+    // Simulate an async operation
+    return "data";
+}
+
+async function main() {
+    const result = await match(fetchData);
+
+    if (result.ok) {
+        console.log(result.value);
+    } else {
+        console.error(result.error);
+    }
+}
+
+main();
+```
+
+## API
 
 ### `ok<T>(value: T): Ok<T>`
 
 Returns an object representing an Ok result.
 
-**Parameters:**
-- `value`: The success value.
-
-**Returns:**
-- An object of type `Ok<T>`.
-
 ### `err<E>(error: E): Err<E>`
 
 Returns an object representing an Err result.
 
-**Parameters:**
-- `error`: The error object.
-
-**Returns:**
-- An object of type `Err<E>`.
-
 ### `match<T, E>(fn: () => Promise<T>): Promise<Result<T, E>>`
 
-Matches the result of an asynchronous function.
+Executes a provided asynchronous function and returns a `Result` type.
 
-**Parameters:**
-- `fn`: The asynchronous function to match.
+## License
 
-**Returns:**
-- A promise that resolves to a `Result<T, E>`.
-
-## Testing
-
-To run tests:
-
-```bash
-bun test
-```
-
-## Example
-
-```typescript
-import { ok, err, match } from "./src/index";
-
-// Example usage of ok
-const successResult = ok("success");
-console.log(successResult); // { ok: true, value: "success" }
-
-// Example usage of err
-const errorResult = err("error");
-console.log(errorResult); // { ok: false, error: "error" }
-
-// Example usage of match
-const asyncFn = async () => "success";
-match(asyncFn).then(result => console.log(result)); // { ok: true, value: "success" }
-```
-
-This project was created using `bun init` in bun v1.2.0. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
