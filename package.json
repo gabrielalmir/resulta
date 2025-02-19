@@ -1,0 +1,14 @@
+{
+  "name": "rs-result",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target node"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "5.0.0"
+  }
+}
