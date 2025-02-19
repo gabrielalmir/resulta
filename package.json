@@ -2,7 +2,9 @@
   "name": "resulta",
   "module": "src/index.ts",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "license": "MIT",
+  "author": "gabrielalmir",
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target node"
   },
@@ -10,6 +12,6 @@
     "@types/bun": "latest"
   },
   "peerDependencies": {
-    "typescript": "5.0.0"
+    "typescript": "^5.0.0"
   }
 }
