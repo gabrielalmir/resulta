@@ -1,8 +1,8 @@
-# rs-result
+# resulta
 
 ## Overview
 
-`rs-result` is a TypeScript utility for handling results in an expressive way, inspired by Rust's `Result` type.
+`resulta` is a TypeScript utility for handling results in an expressive way, inspired by Rust's `Result` type.
 
 ## Installation
 
