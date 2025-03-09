@@ -1,20 +1,25 @@
 {
   "name": "resulta",
-  "type": "module",
-  "version": "0.0.4",
+  "type": "commonjs",
+  "version": "0.0.5",
   "license": "MIT",
   "author": "gabrielalmir",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
-  "keywords": ["result", "result-pattern"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "result",
+    "result-pattern"
+  ],
   "scripts": {
     "build": "tsup"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "tsup": "^8.3.6"
+    "@types/node": "22.13.10",
+    "tsup": "8.3.6"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
