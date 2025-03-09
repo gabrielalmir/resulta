@@ -1,18 +1,12 @@
-import { type Result, err, ok } from 'resulta';
+import { tryCatchAsync } from '../src';
 
-function hello(message = ''): Result<String, Error> {
-    if (!message) {
-        return err(new Error('hello without world'));
+const fetchData = async () => {
+    const result = await tryCatchAsync<string, Error>(async () => "Dados carregados!");
+    if (result.ok) {
+        console.log(result.value); // "Dados carregados!"
+    } else {
+        console.error(result.error);
     }
+};
 
-    return ok(`hello ${message}`);
-}
-
-const result = hello();
-
-if (result.ok) {
-    console.log(result.value);
-    process.exit(0);
-}
-
-console.error(result.error);
+fetchData();

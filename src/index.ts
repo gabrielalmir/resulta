@@ -46,7 +46,7 @@ export function none(): None {
  * @returns {Promise<Result<T, E>>} A promise that resolves to a `Result` type,
  *                                  containing either the successful result or an error.
  */
-export async function match<T, E>(fn: () => Promise<T>): Promise<Result<T, E>> {
+export async function tryCatchAsync<T, E>(fn: () => Promise<T>): Promise<Result<T, E>> {
     try {
         const result = await fn();
         return ok(result);
