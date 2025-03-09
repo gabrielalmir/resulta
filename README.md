@@ -43,7 +43,7 @@ if (result.ok) {
 ### Async Functions
 
 ```ts
-import { match } from 'resulta';
+import { tryCatchAsync } from 'resulta';
 
 async function fetchData(): Promise<string> {
     // Simulate an async operation
@@ -51,7 +51,7 @@ async function fetchData(): Promise<string> {
 }
 
 async function main() {
-    const result = await match(fetchData);
+    const result = await tryCatchAsync(fetchData);
 
     if (result.ok) {
         console.log(result.value);
@@ -73,7 +73,7 @@ Returns an object representing an Ok result.
 
 Returns an object representing an Err result.
 
-### `match<T, E>(fn: () => Promise<T>): Promise<Result<T, E>>`
+### `tryCatchAsync<T, E>(fn: () => Promise<T>): Promise<Result<T, E>>`
 
 Executes a provided asynchronous function and returns a `Result` type.
 
