@@ -10,6 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "resulta": "^0.0.3"
+    "resulta": "^1.0.1"
   }
 }
