@@ -1,27 +1,32 @@
 {
   "name": "resulta",
-  "type": "commonjs",
-  "version": "0.0.7",
-  "license": "MIT",
-  "author": "gabrielalmir",
+  "version": "1.0.0",
+  "description": "resulta is a TypeScript utility for handling results in an expressive way, inspired by Rust's Result type.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "result",
-    "result-pattern"
-  ],
   "scripts": {
+    "test": "vitest",
     "build": "tsup"
   },
-  "devDependencies": {
-    "@types/node": "22.13.10",
-    "tsup": "8.3.6"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielalmir/resulta.git"
   },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+  "keywords": [
+    "result",
+    "rs-result"
+  ],
+  "author": "gabrielalmir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabrielalmir/resulta/issues"
+  },
+  "homepage": "https://github.com/gabrielalmir/resulta#readme",
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
   }
 }

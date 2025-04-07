@@ -1,4 +1,4 @@
-import { describe, expect, it } from "bun:test";
+import { describe, expect, it } from "vitest";
 import { err, ok, tryCatchAsync } from "../src/index";
 
 describe("Result Type Functions", () => {
