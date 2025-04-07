@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { err, ok, tryCatchAsync } from "../src/index";
+import { err, ok, tryCatchAsync } from "../index";
 
 describe("Result Type Functions", () => {
     it("should return an Ok result", () => {

@@ -1,4 +1,4 @@
-import { tryCatchAsync } from '../src';
+import { tryCatchAsync } from '..';
 
 const fetchData = async () => {
     const result = await tryCatchAsync<string, Error>(async () => "Dados carregados!");
