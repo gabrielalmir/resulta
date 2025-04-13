@@ -15,8 +15,16 @@
     "url": "git+https://github.com/gabrielalmir/resulta.git"
   },
   "keywords": [
+    "typescript",
     "result",
-    "rs-result"
+    "error-handling",
+    "functional-programming",
+    "rust-inspired",
+    "utility",
+    "ok",
+    "err",
+    "option",
+    "result-type"
   ],
   "author": "gabrielalmir",
   "license": "MIT",
