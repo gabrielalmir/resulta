@@ -1,6 +1,6 @@
 {
   "name": "resulta",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "resulta is a TypeScript utility for handling results in an expressive way, inspired by Rust's Result type.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
