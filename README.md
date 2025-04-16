@@ -1,5 +1,7 @@
 # Resulta
 
+![Build Status](https://github.com/gabrielalmir/resulta/actions/workflows/npm-publish.yml/badge.svg)
+
 Resulta is a TypeScript library that provides a `Result` type for handling success and error values in a functional way. It is inspired by the Result type in Rust.
 
 ## Installation
@@ -146,7 +148,7 @@ import { resultToOption, ok, err } from 'resulta';
 const result = ok(42);
 const option = resultToOption(result);
 
-console.log(option); // { is_some: true, value: 42 }
+console.log(option); // { isSome: true, value: 42 }
 ```
 
 ### `mapOption<T, U>(option: Option<T>, fn: (value: T) => U): Option<U>`
@@ -160,7 +162,7 @@ import { mapOption, some } from 'resulta';
 const option = some(2);
 const mappedOption = mapOption(option, (value) => value * 2);
 
-console.log(mappedOption); // { is_some: true, value: 4 }
+console.log(mappedOption); // { isSome: true, value: 4 }
 ```
 
 ### `unwrapOption<T>(option: Option<T>, defaultValue: T): T`
